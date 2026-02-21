@@ -13,10 +13,12 @@ If you don't have Obsidian yet, grab it at [obsidian.md](https://obsidian.md/), 
 
 1. Fork & clone this repo
 2. Open the folder as a vault in Obsidian
-3. Copy the skill file into your Claude commands: `cp claude-code/obsidian-sync.md ~/.claude/commands/obsidian.md`
-4. Open that copied file and set `VAULT_PATH` to your vault's absolute path
-5. Run `/obsidian` from any project directory
-6. *(Optional)* Install [Dataview](https://github.com/blacksmithgu/obsidian-dataview) — only the home dashboard (`00.01 Home`) relies on it, but it's a great community plugin to have. To install: Settings → Community Plugins → Turn on community plugins → Browse → search "Dataview" → Install → Enable.
+3. Install the skill from inside the cloned repo:
+   ```bash
+   npx skills add . -g -a claude-code
+   ```
+4. Run `/obsidian` from any project directory
+5. *(Optional)* Install [Dataview](https://github.com/blacksmithgu/obsidian-dataview) — only the home dashboard (`00.01 Home`) relies on it, but it's a great community plugin to have. To install: Settings → Community Plugins → Turn on community plugins → Browse → search "Dataview" → Install → Enable.
 
 ## The `/obsidian` Skill
 
@@ -28,7 +30,7 @@ This is the main thing. Run `/obsidian` from any project directory and Claude wi
 
 Project files get auto-numbered (`11.01`, `11.02`, etc.) and follow a consistent format with stack tables, architecture notes, and dated dev logs. Architecture canvases are color-coded Obsidian canvas files with nodes grouped by layer.
 
-The skill file is `claude-code/obsidian-sync.md` - make sure to read through it to see exactly what each phase does **AND PLEASE MAKE ADJUSTMENTS TO FIT YOUR OWN NEEDS/WANTS**. The architecture canvas JSON format is documented in `claude-code/canvas-reference.md`. (This may not be needed but it can help Claude understand general canvas file structures quicker.)
+The skill definition is `SKILL.md` at the repo root — read through it to see exactly what each phase does **AND PLEASE MAKE ADJUSTMENTS TO FIT YOUR OWN NEEDS/WANTS**. The architecture canvas JSON format is documented in `claude-code/canvas-reference.md`. (This may not be needed but it can help Claude understand general canvas file structures quicker.)
 
 ### Architecture Canvases
 

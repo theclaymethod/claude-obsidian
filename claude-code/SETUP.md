@@ -4,11 +4,13 @@ Syncs your projects into this Obsidian vault from Claude Code. Creates project f
 
 ## Setup
 
+From inside the cloned repo:
+
 ```bash
-cp claude-code/obsidian-sync.md ~/.claude/commands/obsidian.md
+npx skills add . -g -a claude-code
 ```
 
-Open the copied file and set `VAULT_PATH` to your vault's absolute path. That's it.
+This symlinks the vault directory as a skill. The vault path is resolved automatically from the skill's install location — no manual configuration needed.
 
 ## What It Does
 
@@ -39,4 +41,4 @@ Run `/obsidian` from any project directory. Claude will:
 - Canvas JSON format is documented inline in the skill file (and also in `canvas-reference.md` for human reference)
 - Claude shows diffs before overwriting existing sections
 
-The full skill definition is in `obsidian-sync.md` — it's readable markdown, not code. Open it up if you want to understand or change any of the phases.
+The full skill definition is in `SKILL.md` at the repo root — it's readable markdown, not code. Open it up if you want to understand or change any of the phases. The original `obsidian-sync.md` in this directory is kept as a human-readable reference.
